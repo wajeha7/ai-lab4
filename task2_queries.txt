@@ -1,0 +1,26 @@
+Task 2 - Prolog Family Queries
+================================
+
+1. Shows the names of all females:
+   ?- female(X).
+   Result: X = sara ; X = nora.
+
+2. Shows whether there is any male:
+   ?- male(_).
+   Result: true.
+
+3. Shows the grandparent of Faisal:
+   ?- parent(X, Y), parent(Y, faisal).
+   Result: X = ali, Y = muhammad.
+
+4. Shows all daughters of Ahmad:
+   ?- parent(ahmad, X), female(X).
+   Result: X = sara ; X = nora.
+
+5. Shows whether Ahmad and Muhammad have a common parent:
+   ?- parent(X, ahmad), parent(X, muhammad).
+   Result: X = ali. (true - ali is the common parent)
+
+6. Shows whether Khan is the brother of Nora:
+   ?- male(khan), parent(P, khan), parent(P, nora).
+   Result: P = ahmad. (true - khan is the brother of nora)

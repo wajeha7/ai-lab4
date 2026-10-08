@@ -1,0 +1,42 @@
+Task 1 - Prolog Unification Queries
+=====================================
+
+1. ?- house = house.
+   Result: true
+   Explanation: Both sides are the same atom, so they unify successfully.
+
+2. ?- house = abc.
+   Result: false
+   Explanation: Different atoms cannot be unified.
+
+3. ?- edge(a,b) = edge(C,b).
+   Result: true, C = a
+   Explanation: C unifies with 'a' and 'b' matches 'b'.
+
+4. ?- edge(a,d) = edge(C,B).
+   Result: true, C = a, B = d
+   Explanation: Variables C and B unify with 'a' and 'd' respectively.
+
+5. ?- edge(C,B) = edge(a,d).
+   Result: true, C = a, B = d
+   Explanation: Variables C and B unify with 'a' and 'd' respectively.
+
+6. ?- edge(A,f(g,h)) = edge(a,B).
+   Result: true, A = a, B = f(g,h)
+   Explanation: A unifies with 'a' and B unifies with the compound term f(g,h).
+
+7. ?- edge(A,A) = edge(b,c).
+   Result: false
+   Explanation: A cannot unify with both 'b' and 'c' at the same time.
+
+8. ?- edge(A,A) = edge(b,b).
+   Result: true, A = b
+   Explanation: A unifies with 'b' and both positions are 'b', so it succeeds.
+
+9. ?- A = B, B = f.
+   Result: true, A = f, B = f
+   Explanation: A and B unify together, then both unify with 'f'.
+
+10. ?- A = B, B = f, A = e.
+    Result: false
+    Explanation: A unifies with B and f, but then cannot also unify with 'e'.
